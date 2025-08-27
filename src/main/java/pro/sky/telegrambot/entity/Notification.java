@@ -2,7 +2,6 @@ package pro.sky.telegrambot.entity;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Objects;
 
 @Entity
 @Table(name = "notification_task")
@@ -21,7 +20,7 @@ public class Notification {
     @Column(name = "notification_datetime")
     private LocalDateTime notificationDatetime;
 
-    public Notification(){
+    public Notification() {
     }
 
     public Long getId() {
@@ -54,17 +53,5 @@ public class Notification {
 
     public void setNotificationDatetime(LocalDateTime notificationDatetime) {
         this.notificationDatetime = notificationDatetime;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Notification that = (Notification) o;
-        return Objects.equals(id, that.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
     }
 }
